@@ -105,13 +105,13 @@ $( document ).ready(function() {
     // Air Velocity Value
     var av = parseFloat(window.localStorage.getItem('av_value'));
 
-    if (Tg<0){ Tg = 0.0; }
+    if (av<0){ av = 0.0; }
 
-    if (Tg>1){ Tg = 1.0; }
+    if (av>1){ av = 1.0; }
 
     // Mean Radiant Temperature [MRT]
     var Tr = parseFloat(Tg + 2.42*av*(Ta-Tg));
-
+    
     // Relative humidity Value
     var rh = parseFloat(window.localStorage.getItem('rh_value'));
 
@@ -120,7 +120,7 @@ $( document ).ready(function() {
     if (rh>100){ rh = 100.0; }
 
     // Metabolic Rate Value
-    var m = 58*parseFloat($("#metabolic_rate").val());
+    var m = 70;
 
     // Activity Level Value
     var w = 0;
@@ -135,9 +135,7 @@ $( document ).ready(function() {
     // Partial Water pressure vapour
     var Pa = (rh/100)*0.1333*Math.exp(18.6686-4030.183/(Ta+235));
 
-    var factor = 500;
-
-    var s = 0;
+    var factor = 500; var s = 0;
 
     do {
 
