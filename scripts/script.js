@@ -111,7 +111,7 @@ $( document ).ready(function() {
 
     // Mean Radiant Temperature [MRT]
     var Tr = parseFloat(Tg + 2.42*av*(Ta-Tg));
-    
+
     // Relative humidity Value
     var rh = parseFloat(window.localStorage.getItem('rh_value'));
 
@@ -120,7 +120,7 @@ $( document ).ready(function() {
     if (rh>100){ rh = 100.0; }
 
     // Metabolic Rate Value
-    var m = 70;
+    var m = 58*parseFloat($("#metabolic_rate").val());
 
     // Activity Level Value
     var w = 0;
