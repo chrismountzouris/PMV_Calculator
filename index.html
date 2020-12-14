@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+
+  <!-- Declare metatags -->
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="A Mean Vote Predictor [PMV] app.">
+  <meta name="keywords" content="pmv, predict mean vote, comfort level, thermal comfort">
+  <meta name="author" content="Chris Mountzouris">
+
+  <title>PMV Calculator | Application.</title>
+
+  <link href="https://fonts.googleapis.com/css?family=Lato:400,700%7CRoboto:400,500%7CExo+2:600&display=swap" rel="stylesheet">
+
+  <!-- Perfect Scrollbar -->
+  <link type="text/css" href="assets/vendor/perfect-scrollbar.css" rel="stylesheet">
+
+  <!-- Fix Footer CSS -->
+  <link type="text/css" href="assets/vendor/fix-footer.css" rel="stylesheet">
+
+  <!-- Material Design Icons -->
+  <link type="text/css" href="assets/css/material-icons.css" rel="stylesheet">
+
+  <!-- Font Awesome Icons -->
+  <link type="text/css" href="assets/css/fontawesome.css" rel="stylesheet">
+
+  <!-- Preloader -->
+  <link type="text/css" href="assets/css/preloader.css" rel="stylesheet">
+
+  <!-- App CSS -->
+  <link type="text/css" href="assets/css/app.css" rel="stylesheet">
+
+  <!-- CustomCSS -->
+  <link type="text/css" href="assets/css/custom.css" rel="stylesheet">
+
+  <!-- DateRangePicker -->
+  <link type="text/css" href="assets/vendor/daterangepicker.css" rel="stylesheet">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+</head>
+
+  <body class="layout-compact layout-compact">
+
+    <div class="preloader">
+        <div class="sk-double-bounce">
+            <div class="sk-child sk-double-bounce1"></div>
+            <div class="sk-child sk-double-bounce2"></div>
+        </div>
+    </div>
+
+    <div class="mdk-drawer-layout js-mdk-drawer-layout" data-push data-responsive-width="992px">
+        <div class="mdk-drawer-layout__content page-content">
+
+            <div class="alert alert-soft-warning alert-dismissible fade show mb-0" role="alert">
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">×</span>
+                </button>
+                <div class="d-flex flex-wrap align-items-start">
+                    <div class="mr-8pt">
+                        <i class="material-icons">text_fields</i>
+                    </div>
+                    <div class="flex" style="min-width: 180px">
+                        <small class="text-black-100">
+                            <strong>Warning - </strong> This is a BETA version of PMVCalculator!
+                        </small>
+                    </div>
+                </div>
+            </div>
+
+            <div class="py-32pt navbar-submenu">
+                <div class="container page__container">
+                    <div class="progression-bar progression-bar--active-accent">
+                      <a href="compact-signup.html" class="progression-bar__item progression-bar__item--complete progression-bar__item--active">
+                          <span class="progression-bar__item-content">
+                              <i class="material-icons progression-bar__item-icon"></i>
+                              <span class="progression-bar__item-text h5 mb-0 text-uppercase">Environmental Factors</span>
+                              <span class="badge badge-dark">Current</span>
+                          </span>
+                      </a>
+                        <a href="compact-signup-payment.html" class="progression-bar__item">
+                            <span class="progression-bar__item-content">
+                                <i class="material-icons progression-bar__item-icon"></i>
+                                <span class="progression-bar__item-text h5 mb-0 text-uppercase">Personal Factors</span>
+                            </span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="page-section container page__container">
+                <div class="col-lg-10 p-0 mx-auto">
+                    <div class="row">
+                        <div class="col-md-12 mb-24pt mb-md-0 first_form_step_1">
+                            <form action="index2.html">
+                              <div class="form-row">
+                                <div class="col-12 col-md-6 mb-3 air_temperature_validate">
+                                  <label class="form-label" for="at_value">Air Temperature:</label>
+                                  <input id="at_value" type="number" class="form-control fname" placeholder="Air Temperature in °C ..." min="10" max="30" required>
+                                  <div class="invalid-feedback">Please provide a valid air temperature value.</div>
+                                </div>
+                                <div class="col-12 col-md-6 mb-3 globe_temperature_validate">
+                                  <label class="form-label" for="gt_value">Globe Temperature:</label>
+                                  <input id="gt_value" type="number" class="form-control" placeholder="Globe Temperature in °C ..." min="10" max="30" required>
+                                  <div class="invalid-feedback">Please provide a valid globe temperature value.</div>
+                                </div>
+                              </div>
+                              <div class="form-row">
+                                <div class="col-12 col-md-6 mb-3 air_velocity_validate">
+                                  <label class="form-label" for="av_value">Air Velocity:</label>
+                                  <input id="av_value" type="number" class="form-control fname" placeholder="Air Velocity in m/s ..." min="0" max="1" step="0.1" required>
+                                  <div class="invalid-feedback">Please provide a valid air velocity value.</div>
+                                </div>
+                                <div class="col-12 col-md-6 mb-3 relative_humidity_validate">
+                                  <label class="form-label" for="rh_value">Relative Humidity:</label>
+                                  <input id="rh_value" type="number" class="form-control" placeholder="Relative Humidity in % ..." min="0" max="100" required>
+                                  <div class="invalid-feedback">Please provide a valid relative humidity value.</div>
+                                </div>
+                              </div>
+                            </form>
+                            <button type="button" class="btn btn-outline-secondary btn-sm" id="button_next_1">
+                                <i class="material-icons icon--left">arrow_forward</i> Next
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="js-fix-footer2 bg-white border-top-2">
+                <div class="container page__container page-section d-flex flex-column">
+                    <p class="measure-lead-max text-50 small mr-8pt">PMVCalculator is an online tool that measures <b>PMV</b> value in the context of <b>TwinERGY Project</b>.</p>
+                    <p class="text-50 small mt-n1 mb-0">Copyright 2020 &copy; Developed by Chris Mountzouris for Applied Electronics Lab, Dept. Electrical & Computer Engineering, University of Patras.</p>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- Bootstrap -->
+    <script src="assets/vendor/popper.min.js"></script>
+    <script src="assets/vendor/bootstrap.min.js"></script>
+
+    <!-- Perfect Scrollbar -->
+    <script src="assets/vendor/perfect-scrollbar.min.js"></script>
+
+    <!-- DOM Factory -->
+    <script src="assets/vendor/dom-factory.js"></script>
+
+    <!-- MDK -->
+    <script src="assets/vendor/material-design-kit.js"></script>
+
+    <!-- Fix Footer -->
+    <script src="assets/vendor/fix-footer.js"></script>
+
+    <!-- App JS -->
+    <script src="assets/js/app.js"></script>
+
+    <!-- Custom JS -->
+    <script src="scripts/script.js"></script>
+
+    <!-- DateRangePicker -->
+    <script src="assets/vendor/moment.min.js"></script>
+    <script src="assets/vendor/daterangepicker.js"></script>
+    <script src="assets/js/daterangepicker.js"></script>
+
+</body>
+
+</html>

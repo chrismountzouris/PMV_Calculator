@@ -1,0 +1,33 @@
+#addUni{
+  margin-right: 4px;
+}
+
+#addCert{
+  margin-right: 4px;
+}
+
+#addLang{
+  margin-right: 4px;
+}
+
+#addExp{
+  margin-right: 4px !important;
+}
+
+.btnAct{
+  margin: 100px;
+  padding-left: 100px;
+}
+
+.social_icon{
+  padding-top: 18px;
+}
+
+.social_icon_right{
+  padding-top: 18px;
+  margin-left: 10px;
+}
+
+.social_div{
+  padding-top: 13px;
+}

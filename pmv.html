@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>PMV</h2>
+
+<p id="demo"></p>
+
+<script>
+
+  // Metabolic Rate
+  var m = 70;
+
+  // Activity Level
+  var w = 0;
+
+  // Air Temperature [Ta]
+  var Ta = 22;
+
+  // Mean Radiant Temperature [MRT]
+  var Tr = 22;
+
+  // Relative humidity
+  var rh = 50;
+
+  // Clothing Insulation
+  var Icl = 1;
+  Icl = Icl * 0.155;
+
+  // Air Velocity
+  var av = 0.1;
+
+  // ------------------------------------------------------------------//
+
+  var Tsk = 35.7 - 0.0285*m;
+
+  // Partial Water pressure vapour
+  var Pa = (rh/100)*0.1333*Math.exp(18.6686-4030.183/(Ta+235));
+
+  var factor = 500;
+
+  var s = 0;
+
+  do {
+
+    // Clothing Factor / Clothing Insulation
+    var fcl = 1.05 + 0.65*Icl;
+
+    var e = 0.42*((m-w)-58);
+
+    var Ediff = 3.05*(0.255*Tsk-3.36-Pa);
+
+    var Hres = 1.73*0.01*m*(5.867-Pa)+1.4*0.001*m*(34-Ta);
+
+    var Tcl = Tsk-Icl*(m-w-e-Ediff-Hres-s);
+
+    var hr = 5.67*(10**-8)*0.95*0.77*( Math.exp(4*Math.log(273+Tcl))-Math.exp(4*Math.log(273+Tr)) )/(Tcl-Tr);
+
+    var hc = 12.1*Math.pow(av,0.5);
+
+    var r = fcl*hr*(Tcl-Tr);
+
+    var c = fcl*hc*(Tcl-Ta);
+
+    var Balance = m-w-e-Ediff-Hres-r-c-s;
+
+    if (Balance>0)  {
+      s = s + factor;
+      factor = factor/2;
+    }
+    else {
+      s = s - factor;
+    }
+
+  } while (Math.abs(Balance) > 0.01);
+
+  s = m-w-e-Ediff-Hres-r-c;
+
+  var pmv = (0.303*Math.exp(-0.036*m)+0.028)*s
+
+  pmv = Math.round(pmv*100)/100;
+
+  document.getElementById("demo").innerHTML = e;
+
+</script>
+
+</body>
+</html>
