@@ -74,14 +74,14 @@
             <div class="py-32pt navbar-submenu">
                 <div class="container page__container">
                     <div class="progression-bar progression-bar--active-accent">
-                      <a href="" class="progression-bar__item progression-bar__item--complete progression-bar__item--active">
+                      <a href="compact-signup.html" class="progression-bar__item progression-bar__item--complete progression-bar__item--active">
                           <span class="progression-bar__item-content">
                               <i class="material-icons progression-bar__item-icon"></i>
                               <span class="progression-bar__item-text h5 mb-0 text-uppercase">Environmental Factors</span>
                               <span class="badge badge-dark">Current</span>
                           </span>
                       </a>
-                        <a href="" class="progression-bar__item">
+                        <a href="compact-signup-payment.html" class="progression-bar__item">
                             <span class="progression-bar__item-content">
                                 <i class="material-icons progression-bar__item-icon"></i>
                                 <span class="progression-bar__item-text h5 mb-0 text-uppercase">Personal Factors</span>
@@ -99,12 +99,12 @@
                               <div class="form-row">
                                 <div class="col-12 col-md-6 mb-3 air_temperature_validate">
                                   <label class="form-label" for="at_value">Air Temperature:</label>
-                                  <input id="at_value" type="number" class="form-control fname" placeholder="Air Temperature in °C ..." min="10" max="30" required>
+                                  <input id="at_value" type="number" class="form-control fname" placeholder="Air Temperature in °C ..." min="10" max="40" required>
                                   <div class="invalid-feedback">Please provide a valid air temperature value.</div>
                                 </div>
                                 <div class="col-12 col-md-6 mb-3 globe_temperature_validate">
                                   <label class="form-label" for="gt_value">Globe Temperature:</label>
-                                  <input id="gt_value" type="number" class="form-control" placeholder="Globe Temperature in °C ..." min="10" max="30" required>
+                                  <input id="gt_value" type="number" class="form-control" placeholder="Globe Temperature in °C ..." min="10" max="40" required>
                                   <div class="invalid-feedback">Please provide a valid globe temperature value.</div>
                                 </div>
                               </div>
@@ -118,6 +118,16 @@
                                   <label class="form-label" for="rh_value">Relative Humidity:</label>
                                   <input id="rh_value" type="number" class="form-control" placeholder="Relative Humidity in % ..." min="0" max="100" required>
                                   <div class="invalid-feedback">Please provide a valid relative humidity value.</div>
+                                </div>
+                              </div>
+                              <div class="form-row">
+                                <div class="col-12 col-md-6 mb-3 mean_radiant_validate">
+                                  <label class="form-label" for="mrt_value">Mean Radiant Temperature:</label>
+                                  <input id="mrt_value" type="number" class="form-control fname" placeholder="Mean Radiant Temperature in °C ..." required disabled>
+                                </div>
+                                <div class="col-12 col-md-6 mb-3 relative_humidity_validate">
+                                  <label class="form-label" for="pa_value">Water Vapour Pressure:</label>
+                                  <input id="pa_value" type="number" class="form-control" placeholder="Water Vapour Pressure in Pa ..." required disabled>
                                 </div>
                               </div>
                             </form>
