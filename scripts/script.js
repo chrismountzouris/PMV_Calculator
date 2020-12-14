@@ -9,7 +9,8 @@ $( document ).ready(function() {
         $("#mrt_value").val(mrt_temp);
       }
       if ($("#rh_value").val().length>0 && $("#at_value").val().length>0){
-        var wvp = (parseFloat($("#rh_value").val())/100)*0.1333*Math.exp(18.6686-4030.183/(parseFloat(($("#at_value").val())+235)));
+        var at_temp = parseFloat(($("#at_value").val()));
+        var wvp = (parseFloat($("#rh_value").val())/100)*0.1333*Math.exp(18.6686-4030.183/(at_temp+235));
         wvp = Math.round(wvp * 100) / 100
         $("#pa_value").val(wvp);
       }
@@ -26,7 +27,8 @@ $( document ).ready(function() {
       $("#mrt_value").val(mrt_temp);
     }
     if ($("#rh_value").val().length>0 && $("#at_value").val().length>0){
-      var wvp = (parseFloat($("#rh_value").val())/100)*0.1333*Math.exp(18.6686-4030.183/(parseFloat(($("#at_value").val())+235)));
+      var at_temp = parseFloat(($("#at_value").val()));
+      var wvp = (parseFloat($("#rh_value").val())/100)*0.1333*Math.exp(18.6686-4030.183/(at_temp+235));
       wvp = Math.round(wvp * 100) / 100
       $("#pa_value").val(wvp);
     }
@@ -37,7 +39,8 @@ $( document ).ready(function() {
       $( "div .relative_humidity_validate" ).addClass( "was-validated" );
     }
     if ($("#rh_value").val().length>0 && $("#at_value").val().length>0){
-      var wvp = (parseFloat($("#rh_value").val())/100)*0.1333*Math.exp(18.6686-4030.183/(parseFloat(($("#at_value").val())+235)));
+      var at_temp = parseFloat(($("#at_value").val()));
+      var wvp = (parseFloat($("#rh_value").val())/100)*0.1333*Math.exp(18.6686-4030.183/(at_temp+235));
       wvp = Math.round(wvp * 100) / 100
       $("#pa_value").val(wvp);
     }
@@ -53,7 +56,8 @@ $( document ).ready(function() {
       $("#mrt_value").val(mrt_temp);
     }
     if ($("#rh_value").val().length>0 && $("#at_value").val().length>0){
-      var wvp = (parseFloat($("#rh_value").val())/100)*0.1333*Math.exp(18.6686-4030.183/(parseFloat(($("#at_value").val())+235)));
+      var at_temp = parseFloat(($("#at_value").val()));
+      var wvp = (parseFloat($("#rh_value").val())/100)*0.1333*Math.exp(18.6686-4030.183/(at_temp+235));
       wvp = Math.round(wvp * 100) / 100
       $("#pa_value").val(wvp);
     }
