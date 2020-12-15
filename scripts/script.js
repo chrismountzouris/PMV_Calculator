@@ -72,6 +72,12 @@ $( document ).ready(function() {
       return;
     }
 
+    if ($("#at_value").val() < 10 || $("#at_value").val() > 40 || $("#gt_value").val() > 40 || $("#gt_value").val() < 10 || $("#rh_value").val()>100 || $("#rh_value").val() <0 || $("#av_value").val()>1 || $("#av_value").val() <0){
+      $( "div .col-md-6" ).addClass( "was-validated" );
+      $( "div .col-md-3" ).addClass( "was-validated" );
+      return;
+    }
+
     at_value = $("#at_value").val();
     gt_value = $("#gt_value").val();
     av_value = $("#av_value").val();
