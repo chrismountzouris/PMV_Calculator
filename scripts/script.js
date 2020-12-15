@@ -63,16 +63,16 @@ $( document ).ready(function() {
     }
   });
 
-  $("#clo_value").val($("#upper_clothing_insulation").val());
+  $("#clo_value").val($("#upper_clothing_insulation").val()+' clo');
 
-  $("#met_value").val($("#metabolic_rate").val());
+  $("#met_value").val($("#metabolic_rate").val()+' met');
 
   $("#upper_clothing_insulation").on('change', function (e) {
-    $("#clo_value").val($("#upper_clothing_insulation").val());
+    $("#clo_value").val($("#upper_clothing_insulation").val()+' clo');
   });
 
   $("#metabolic_rate").on('change', function (e) {
-    $("#met_value").val($("#metabolic_rate").val());
+    $("#met_value").val($("#metabolic_rate").val()+' met');
   });
 
   // Personal Information Step
@@ -194,7 +194,11 @@ $( document ).ready(function() {
 
     pmv = Math.round(pmv*100)/100;
 
-    alert("PMV: "+pmv);
+    window.localStorage.setItem('pmv_value', pmv);
+
+    //alert("PMV: "+pmv);
+
+    location.href = 'index3.html';
 
   });
 

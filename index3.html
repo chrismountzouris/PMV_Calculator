@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+
+  <!-- Declare metatags -->
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="A Mean Vote Predictor [PMV] app.">
+  <meta name="keywords" content="pmv, predict mean vote, comfort level, thermal comfort">
+  <meta name="author" content="Chris Mountzouris">
+
+  <title>PMV Calculator | Application.</title>
+
+  <link href="https://fonts.googleapis.com/css?family=Lato:400,700%7CRoboto:400,500%7CExo+2:600&display=swap" rel="stylesheet">
+
+  <!-- Perfect Scrollbar -->
+  <link type="text/css" href="assets/vendor/perfect-scrollbar.css" rel="stylesheet">
+
+  <!-- Fix Footer CSS -->
+  <link type="text/css" href="assets/vendor/fix-footer.css" rel="stylesheet">
+
+  <!-- Material Design Icons -->
+  <link type="text/css" href="assets/css/material-icons.css" rel="stylesheet">
+
+  <!-- Font Awesome Icons -->
+  <link type="text/css" href="assets/css/fontawesome.css" rel="stylesheet">
+
+  <!-- Preloader -->
+  <link type="text/css" href="assets/css/preloader.css" rel="stylesheet">
+
+  <!-- App CSS -->
+  <link type="text/css" href="assets/css/app.css" rel="stylesheet">
+
+  <!-- CustomCSS -->
+  <link type="text/css" href="assets/css/custom.css" rel="stylesheet">
+
+  <!-- DateRangePicker -->
+  <link type="text/css" href="assets/vendor/daterangepicker.css" rel="stylesheet">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+
+</head>
+
+  <body class="layout-compact layout-compact">
+
+    <div class="preloader">
+        <div class="sk-double-bounce">
+            <div class="sk-child sk-double-bounce1"></div>
+            <div class="sk-child sk-double-bounce2"></div>
+        </div>
+    </div>
+
+    <div class="mdk-drawer-layout js-mdk-drawer-layout" data-push data-responsive-width="992px">
+        <div class="mdk-drawer-layout__content page-content">
+
+          <div class="alert alert-soft-warning alert-dismissible fade show mb-0" role="alert">
+              <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                  <span aria-hidden="true">×</span>
+              </button>
+              <div class="d-flex flex-wrap align-items-start">
+                  <div class="mr-8pt">
+                      <i class="material-icons">text_fields</i>
+                  </div>
+                  <div class="flex" style="min-width: 180px">
+                    <small class="text-black-100">
+                        <strong>Warning - </strong> This is a BETA version of PMVCalculator!
+                    </small>
+                  </div>
+              </div>
+          </div>
+
+            <div class="page-section container page__container">
+                <div class="col-lg-12 p-0 mx-auto">
+                    <div class="row">
+                      <canvas id="bar-chart" width="800" height="450"></canvas>
+                    </div>
+                </div>
+            </div>
+
+            <div class="js-fix-footer2 bg-white border-top-2">
+                <div class="container page__container page-section d-flex flex-column">
+                    <p class="measure-lead-max text-50 small mr-8pt">PMVCalculator is an online tool that measures <b>PMV</b> value in the context of <b>TwinERGY Project</b>.</p>
+                    <p class="text-50 small mt-n1 mb-0">Copyright 2020 &copy; Developed by Chris Mountzouris for Applied Electronics Lab, Dept. Electrical & Computer Engineering, University of Patras.</p>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+    <script>
+    var pmv_value = parseFloat(window.localStorage.getItem('pmv_value'));
+    // Bar chart
+    new Chart(document.getElementById("bar-chart"), {
+        type: 'bar',
+        data: {
+          labels: ["PMV"],
+          datasets: [
+            {
+              label: "Predicted Mean Value",
+              backgroundColor: ["#7579e7"],
+              data: [pmv_value]
+            }
+          ]
+        },
+        options: {
+          legend: { display: false },
+          scales: {
+              yAxes : [{
+                  ticks : {
+                      max : 3,
+                      min : -3
+                  }
+              }]
+          },
+          title: {
+            display: true,
+            text: 'Predicted Mean Value [PMV]'
+          }
+        }
+    });
+
+    </script>
+
+    <!-- Bootstrap -->
+    <script src="assets/vendor/popper.min.js"></script>
+    <script src="assets/vendor/bootstrap.min.js"></script>
+
+    <!-- Perfect Scrollbar -->
+    <script src="assets/vendor/perfect-scrollbar.min.js"></script>
+
+    <!-- DOM Factory -->
+    <script src="assets/vendor/dom-factory.js"></script>
+
+    <!-- MDK -->
+    <script src="assets/vendor/material-design-kit.js"></script>
+
+    <!-- Fix Footer -->
+    <script src="assets/vendor/fix-footer.js"></script>
+
+    <!-- App JS -->
+    <script src="assets/js/app.js"></script>
+
+    <!-- Custom JS -->
+    <script src="scripts/script.js"></script>
+
+    <!-- Custom JS -->
+    <script src="scripts/custom.js"></script>
+
+</body>
+
+</html>
