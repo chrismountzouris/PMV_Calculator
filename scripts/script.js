@@ -63,6 +63,18 @@ $( document ).ready(function() {
     }
   });
 
+  $("#clo_value").val($("#upper_clothing_insulation").val());
+
+  $("#met_value").val($("#metabolic_rate").val());
+
+  $("#upper_clothing_insulation").on('change', function (e) {
+    $("#clo_value").val($("#upper_clothing_insulation").val());
+  });
+
+  $("#metabolic_rate").on('change', function (e) {
+    $("#met_value").val($("#metabolic_rate").val());
+  });
+
   // Personal Information Step
   $("#button_next_1").click(function() {
 

@@ -98,7 +98,7 @@
                             <form action="index3.html">
                               <div class="form-row">
                                 <div class="col-12 col-md-6 mb-3">
-                                  <label class="form-label" for="upper_clothing_insulation">Clothing Insulation:</label>
+                                  <label class="form-label" for="upper_clothing_insulation">Clothing:</label>
                                   <select id="upper_clothing_insulation" class="form-control custom-select upper_clothing_insulation">
                                     <option value="0.5">Typical Indoor Summer outfit</option>
                                     <option value="1.0">Typical Indoor Winter outfit</option>
@@ -107,7 +107,13 @@
                                   </select>
                                 </div>
                                 <div class="col-12 col-md-6 mb-3">
-                                  <label class="form-label" for="metabolic_rate">Metabolic Rate:</label>
+                                  <label class="form-label" for="clo_value">Clothing Insulation:</label>
+                                  <input id="clo_value" class="form-control" placeholder="Clothing Insulation in clo ..." required disabled>
+                                </div>
+                              </div>
+                              <div class="form-row">
+                                <div class="col-12 col-md-6 mb-3">
+                                  <label class="form-label" for="metabolic_rate">Activity:</label>
                                   <select id="metabolic_rate" class="form-control custom-select metabolic_rate">
                                     <option value="0.7">Sleeping</option>
                                     <option value="1.0">Seating</option>
@@ -116,20 +122,16 @@
                                     <option value="1.2">Standing</option>
                                     <option value="2.0">Low Intense Walking</option>
                                     <option value="3.8">High Intense Walking</option>
-                                    <!-- <option value="2.4">Low Intense Dancing</option>
-                                    <option value="4.4">High Intense Dancing</option>
-                                    <option value="3.0">Low Intense Calisthenics</option>
-                                    <option value="4.0">High Intense Calisthenics</option>
-                                    <option value="5.0">Low Intense Basketball</option>
-                                    <option value="7.6">High Intense Basketball</option>
-                                    <option value="7.0">Low Intense Wrestling</option>
-                                    <option value="8.7">High Intense Wrestling</option> -->
                                     <option value="2.0">Low Intense House Cleaning</option>
                                     <option value="3.4">High Intense House Cleaning</option>
                                     <option value="1.8">Cooking</option>
                                     <option value="1.3">Typing</option>
                                     <option value="1.5">Driving</option>
                                   </select>
+                                </div>
+                                <div class="col-12 col-md-6 mb-3">
+                                  <label class="form-label" for="met_value">Metabolic Rate:</label>
+                                  <input id="met_value" class="form-control" placeholder="Metabolic Rate in met ..." required disabled>
                                 </div>
                               </div>
                             </form>
