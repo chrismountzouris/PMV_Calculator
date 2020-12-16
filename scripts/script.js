@@ -6,13 +6,13 @@ $( document ).ready(function() {
       if ($("#gt_value").val().length>0 && $("#at_value").val().length>0 && $("#av_value").val().length>0){
         var mrt_temp = parseFloat($("#gt_value").val()) + 2.42*parseFloat($("#av_value").val())*parseFloat(($("#at_value").val())-parseFloat($("#gt_value").val()));
         mrt_temp = Math.round(mrt_temp * 100) / 100
-        $("#mrt_value").val(mrt_temp);
+        $("#mrt_value").val(mrt_temp+' °C');
       }
       if ($("#rh_value").val().length>0 && $("#at_value").val().length>0){
         var at_temp = parseFloat(($("#at_value").val()));
         var wvp = (parseFloat($("#rh_value").val())/100)*0.1333*Math.exp(18.6686-4030.183/(at_temp+235));
         wvp = Math.round(wvp * 100) / 100
-        $("#pa_value").val(wvp);
+        $("#pa_value").val(wvp+ ' Pa');
       }
     }
   });
@@ -24,13 +24,13 @@ $( document ).ready(function() {
     if ($("#gt_value").val().length>0 && $("#at_value").val().length>0 && $("#av_value").val().length>0){
       var mrt_temp = parseFloat($("#gt_value").val()) + 2.42*parseFloat($("#av_value").val())*parseFloat(($("#at_value").val())-parseFloat($("#gt_value").val()));
       mrt_temp = Math.round(mrt_temp * 100) / 100
-      $("#mrt_value").val(mrt_temp);
+      $("#mrt_value").val(mrt_temp+ ' °C');
     }
     if ($("#rh_value").val().length>0 && $("#at_value").val().length>0){
       var at_temp = parseFloat(($("#at_value").val()));
       var wvp = (parseFloat($("#rh_value").val())/100)*0.1333*Math.exp(18.6686-4030.183/(at_temp+235));
       wvp = Math.round(wvp * 100) / 100
-      $("#pa_value").val(wvp);
+      $("#pa_value").val(wvp+ ' Pa');
     }
   });
 
@@ -42,7 +42,7 @@ $( document ).ready(function() {
       var at_temp = parseFloat(($("#at_value").val()));
       var wvp = (parseFloat($("#rh_value").val())/100)*0.1333*Math.exp(18.6686-4030.183/(at_temp+235));
       wvp = Math.round(wvp * 100) / 100
-      $("#pa_value").val(wvp);
+      $("#pa_value").val(wvp+ ' Pa');
     }
   });
 
@@ -53,13 +53,13 @@ $( document ).ready(function() {
     if ($("#gt_value").val().length>0 && $("#at_value").val().length>0 && $("#av_value").val().length>0){
       var mrt_temp = parseFloat($("#gt_value").val()) + 2.42*parseFloat($("#av_value").val())*parseFloat(($("#at_value").val())-parseFloat($("#gt_value").val()));
       mrt_temp = Math.round(mrt_temp * 100) / 100
-      $("#mrt_value").val(mrt_temp);
+      $("#mrt_value").val(mrt_temp+' °C');
     }
     if ($("#rh_value").val().length>0 && $("#at_value").val().length>0){
       var at_temp = parseFloat(($("#at_value").val()));
       var wvp = (parseFloat($("#rh_value").val())/100)*0.1333*Math.exp(18.6686-4030.183/(at_temp+235));
       wvp = Math.round(wvp * 100) / 100
-      $("#pa_value").val(wvp);
+      $("#pa_value").val(wvp+ ' Pa');
     }
   });
 
@@ -195,8 +195,6 @@ $( document ).ready(function() {
     pmv = Math.round(pmv*100)/100;
 
     window.localStorage.setItem('pmv_value', pmv);
-
-    //alert("PMV: "+pmv);
 
     location.href = 'index3.html';
 
