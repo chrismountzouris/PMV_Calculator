@@ -94,6 +94,15 @@
 
     <script>
     var pmv_value = parseFloat(window.localStorage.getItem('pmv_value'));
+
+    var color = '';
+
+    if (pmv_value>0) {
+      color = '#ff4646';
+    }
+    else {
+      color = '#7579e7';
+    }
     // Bar chart
     new Chart(document.getElementById("bar-chart"), {
         type: 'bar',
@@ -102,7 +111,7 @@
           datasets: [
             {
               label: "Predicted Mean Value",
-              backgroundColor: ["#7579e7"],
+              backgroundColor: [color],
               data: [pmv_value]
             }
           ]
