@@ -140,11 +140,15 @@ $( document ).ready(function() {
     // Metabolic Rate Value
     var m = 58*parseFloat($("#metabolic_rate").val());
 
+    window.localStorage.setItem('met_value', m);
+
     // Activity Level Value
     var w = 0;
 
     // Clothing Insulation
     var Icl = parseFloat($("#upper_clothing_insulation").val());
+
+    window.localStorage.setItem('clo_value', Icl);
 
     Icl = Icl * 0.155;
 

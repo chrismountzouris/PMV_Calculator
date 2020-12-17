@@ -78,6 +78,29 @@
               </ul>
           </div>
 
+          <div class="navbar navbar-expand navbar-light border-bottom-2" id="default-navbar" data-primary>
+
+              <span class="chip chip-outline-secondary d-inline-flex align-items-center" data-toggle="tooltip" data-title="Air Temperature" data-placement="bottom" data-original-title="" title="">
+                  <div id="air_temperature_val"></div> °C
+              </span>
+              <span class="chip chip-outline-secondary d-inline-flex align-items-center" data-toggle="tooltip" data-title="Global Temperature" data-placement="bottom" data-original-title="" title="">
+                  <div id="global_temperature_val"> </div> °C
+              </span>
+              <span class="chip chip-outline-secondary d-inline-flex align-items-center" data-toggle="tooltip" data-title="Air Velocity" data-placement="bottom" data-original-title="" title="">
+                  <div id="air_velocity_val"></div> m/s
+              </span>
+              <span class="chip chip-outline-secondary d-inline-flex align-items-center" data-toggle="tooltip" data-title="Relative Humidity" data-placement="bottom" data-original-title="" title="">
+                  <div id="humidity_val"></div> %
+              </span>
+              <span class="chip chip-outline-secondary d-inline-flex align-items-center" data-toggle="tooltip" data-title="Metabolic Rate" data-placement="bottom" data-original-title="" title="">
+                  <div id="met_val"> </div> W/m<sup>2</sup>
+              </span>
+              <span class="chip chip-outline-secondary d-inline-flex align-items-center" data-toggle="tooltip" data-title="Clothing Insulation" data-placement="bottom" data-original-title="" title="">
+                  <div id="clo_val"> </div> clo.
+              </span>
+
+          </div>
+
           <div class="page-section container page__container">
               <div class="col-lg-12 p-0 mx-auto">
                     <canvas id="bar-chart" width="800" height="450"></canvas>
@@ -101,6 +124,20 @@
     <script>
     var pmv_value = parseFloat(window.localStorage.getItem('pmv_value'));
     var ppd_value = parseFloat(window.localStorage.getItem('ppd_value'));
+
+    var at_value = parseFloat(window.localStorage.getItem('at_value'));
+    var gt_value = parseFloat(window.localStorage.getItem('gt_value'));
+    var av_value = parseFloat(window.localStorage.getItem('av_value'));
+    var rh_value = parseFloat(window.localStorage.getItem('rh_value'));
+    var met_value = parseFloat(window.localStorage.getItem('met_value'));
+    var clo_value = parseFloat(window.localStorage.getItem('clo_value'));
+
+    $("#air_temperature_val").html(at_value);
+    $("#global_temperature_val").html(gt_value);
+    $("#air_velocity_val").html(av_value);
+    $("#humidity_val").html(rh_value);
+    $("#met_val").html(met_value);
+    $("#clo_val").html(clo_value);
 
     var color = '';
 
