@@ -194,7 +194,7 @@ $( document ).ready(function() {
 
     pmv = Math.round(pmv*100)/100;
 
-    var ppd =100-95*Math.exp(-0.03353*Math.pow(pmv,4)-0.2179*Math.pow(pmv,2));
+    var ppd = 100-95*Math.exp(-0.03353*Math.pow(pmv,4)-0.2179*Math.pow(pmv,2));
 
     ppd = Math.round(ppd*100)/100;
 

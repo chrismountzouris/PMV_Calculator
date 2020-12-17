@@ -108,12 +108,13 @@
     var color = '';
 
     if (pmv_value>0) {
-      color = '#ff4646';
+      color = '#f67280';
     }
     else {
-      color = '#7579e7';
+      color = '#61c0bf';
     }
-    // Bar chart
+
+    // PMV Chart
     new Chart(document.getElementById("bar-chart"), {
         type: 'bar',
         data: {
@@ -152,7 +153,7 @@
         }
     });
 
-    // Bar chart
+    // PPD Chart
     new Chart(document.getElementById("bar-chart-1"), {
         type: 'bar',
         data: {
