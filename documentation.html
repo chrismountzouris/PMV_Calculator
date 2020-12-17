@@ -406,6 +406,21 @@
               </div>
             </div>
 
+            <div class="page-section border-bottom-2">
+              <div class="container page__container">
+
+                  <div class="page-separator">
+                      <div class="page-separator__text">Chart Analysis</div>
+                  </div>
+
+                  <div class="row">
+                    <div class="col-lg-12 p-0 mx-auto">
+                          <canvas id="line-chart" width="800" height="450"></canvas>
+                    </div>
+                  </div>
+              </div>
+            </div>
+
             <div class="js-fix-footer2 bg-white border-top-2">
                 <div class="container page__container page-section d-flex flex-column">
                     <p class="measure-lead-max text-50 small mr-8pt">PMVCalculator is an online tool that measures <b>PMV</b> value in the context of <b>TwinERGY Project</b>.</p>
@@ -416,6 +431,53 @@
         </div>
 
     </div>
+
+    <script>
+    var i;
+
+    var ppd = [];
+    var ppd_x = [];
+
+    for (i = -3; i < 3; i=i+0.1) {
+      temp_ppd = 100-95*Math.exp(-0.03353*Math.pow(i,4)-0.2179*Math.pow(i,2));
+      temp_ppd = Math.round(temp_ppd*100)/100;
+      ppd.push(temp_ppd);
+      temp_i = Math.round(i*100)/100;
+      ppd_x.push(temp_i);
+    }
+
+    var color = '#393e46';
+
+    new Chart(document.getElementById("line-chart"), {
+      type: 'line',
+      data: {
+        labels: ppd_x,
+        datasets: [{
+            data: ppd,
+            label: "PPD",
+            borderColor: "#393e46",
+            fill: false
+          }
+        ]
+      },
+      options: {
+          tooltips: {
+            enabled: true,
+            mode: 'single',
+            callbacks: {
+                label: function(tooltipItems, data) {
+                    return ' Predicted Percentage of Dissatisfied: '+tooltipItems.yLabel + ' %';
+                }
+            }
+        },
+        title: {
+          display: true,
+          text: 'PPD | PMV - Chart'
+        }
+      }
+    });
+
+    </script>
 
     <!-- Bootstrap -->
     <script src="assets/vendor/popper.min.js"></script>
