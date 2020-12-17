@@ -438,7 +438,7 @@
     var ppd = [];
     var ppd_x = [];
 
-    for (i = -3; i < 3; i=i+0.1) {
+    for (i = -3; i < 3.1; i=i+0.1) {
       temp_ppd = 100-95*Math.exp(-0.03353*Math.pow(i,4)-0.2179*Math.pow(i,2));
       temp_ppd = Math.round(temp_ppd*100)/100;
       ppd.push(temp_ppd);
@@ -472,7 +472,7 @@
         },
         title: {
           display: true,
-          text: 'PPD | PMV - Chart'
+          text: 'Predicted Percentage of Dissatisfaction according to PMV'
         }
       }
     });
