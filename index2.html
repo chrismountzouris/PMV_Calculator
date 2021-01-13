@@ -138,14 +138,50 @@
                                 <input id="met_value" class="form-control" placeholder="Metabolic Rate in met ..." required disabled>
                               </div>
                             </div>
+                            <div class="form-row">
+                              <div class="col-12 col-md-6 mb-3">
+                                <label class="form-label" for="sex">Sex:</label>
+                                <select id="sex" class="form-control custom-select sex_value">
+                                  <option value="male">Male</option>
+                                  <option value="female">Female</option>
+                                </select>
+                              </div>
+                              <div class="col-12 col-md-6 mb-3 age_validate">
+                                <label class="form-label" for="age_value">Age:</label>
+                                <input id="age_value" type="number" class="form-control fname" placeholder="Age in years ..." min="5" max="85" step="1" required>
+                                <div class="invalid-feedback">Please provide a valid age value.</div>
+                              </div>
+                            </div>
+                            <div class="form-row">
+                              <div class="col-12 col-md-6 mb-3 height_validate">
+                                <label class="form-label" for="height_value">Height:</label>
+                                <input id="height_value" type="number" class="form-control height" placeholder="Height in cm ..." min="130" max="220" step="1" required>
+                                <div class="invalid-feedback">Please provide a valid height value.</div>
+                              </div>
+                              <div class="col-12 col-md-6 mb-3 weight_validate">
+                                <label class="form-label" for="weight_value">Weight:</label>
+                                <input id="weight_value" type="number" class="form-control weight" placeholder="Weight in kgs ..." min="30" max="130" step="1" required>
+                                <div class="invalid-feedback">Please provide a valid weight value.</div>
+                              </div>
+                            </div>
+                            <div class="form-row">
+                              <div class="col-12 col-md-6 mb-3">
+                                <label class="form-label" for="rmr_value">Harris-Benedict RMR:</label>
+                                <input id="rmr_value" class="form-control" placeholder="Harris-Benedict RMR ..." required disabled>
+                              </div>
+                              <div class="col-12 col-md-6 mb-3">
+                                <label class="form-label" for="corr_met_value">Corrected Metabolic Rate:</label>
+                                <input id="corr_met_value" class="form-control" placeholder="Corrected Metabolic Rate in met ..." required disabled>
+                              </div>
+                            </div>
                           </form>
 
-                              <button type="button" class="btn btn-outline-secondary btn-sm" onclick="location.href = 'index.html';">
-                                  <i class="material-icons icon--left">arrow_back</i> Back
-                              </button>
-                              <button type="button" class="btn btn-outline-secondary btn-sm" id="submit">
-                                  <i class="material-icons icon--left">arrow_forward</i> Finish
-                              </button>
+                          <button type="button" class="btn btn-outline-secondary btn-sm" onclick="location.href = 'index.html';">
+                              <i class="material-icons icon--left">arrow_back</i> Back
+                          </button>
+                          <button type="button" class="btn btn-outline-secondary btn-sm" id="submit">
+                              <i class="material-icons icon--left">arrow_forward</i> Finish
+                          </button>
                       </div>
                   </div>
               </div>
