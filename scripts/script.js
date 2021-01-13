@@ -73,14 +73,16 @@ $( document ).ready(function() {
       var age_value_parse = parseFloat(($("#age_value").val()));
       if ($("#sex").val()=='male'){
         var rmr = 66.4730 + 5.0033*height_value_parse + 13.7516*weight_value_parse - 6.7550*age_value_parse;
+        rmr = (rmr*0.139)/weight_value_parse;
       }
       if ($("#sex").val()=='female'){
         var rmr = 655.0955 + 1.8496*height_value_parse + 9.5634*weight_value_parse - 4.6756*age_value_parse;
+        rmr = (rmr*0.139)/weight_value_parse;
       }
       $("#rmr_value").val(rmr);
       if ($("#met_value").val().length>0){
         var met_value_parse = parseFloat(($("#met_value").val()));
-        var corr_val = met_value_parse + 3.5/rmr;
+        var corr_val = met_value_parse * 3.5/rmr;
         $("#corr_met_value").val(corr_val);
       }
     }
@@ -96,14 +98,16 @@ $( document ).ready(function() {
       var age_value_parse = parseFloat(($("#age_value").val()));
       if ($("#sex").val()=='male'){
         var rmr = 66.4730 + 5.0033*height_value_parse + 13.7516*weight_value_parse - 6.7550*age_value_parse;
+        rmr = (rmr*0.139)/weight_value_parse;
       }
       if ($("#sex").val()=='female'){
         var rmr = 655.0955 + 1.8496*height_value_parse + 9.5634*weight_value_parse - 4.6756*age_value_parse;
+        rmr = (rmr*0.139)/weight_value_parse;
       }
       $("#rmr_value").val(rmr);
       if ($("#met_value").val().length>0){
         var met_value_parse = parseFloat(($("#met_value").val()));
-        var corr_val = met_value_parse + 3.5/rmr;
+        var corr_val = met_value_parse * 3.5/rmr;
         $("#corr_met_value").val(corr_val);
       }
     }
@@ -119,14 +123,16 @@ $( document ).ready(function() {
       var age_value_parse = parseFloat(($("#age_value").val()));
       if ($("#sex").val()=='male'){
         var rmr = 66.4730 + 5.0033*height_value_parse + 13.7516*weight_value_parse - 6.7550*age_value_parse;
+        rmr = (rmr*0.139)/weight_value_parse;
       }
       if ($("#sex").val()=='female'){
         var rmr = 655.0955 + 1.8496*height_value_parse + 9.5634*weight_value_parse - 4.6756*age_value_parse;
+        rmr = (rmr*0.139)/weight_value_parse;
       }
       $("#rmr_value").val(rmr);
       if ($("#met_value").val().length>0){
         var met_value_parse = parseFloat(($("#met_value").val()));
-        var corr_val = met_value_parse + 3.5/rmr;
+        var corr_val = met_value_parse * 3.5/rmr;
         $("#corr_met_value").val(corr_val);
       }
     }
@@ -139,14 +145,16 @@ $( document ).ready(function() {
       var age_value_parse = parseFloat(($("#age_value").val()));
       if ($("#sex").val()=='male'){
         var rmr = 66.4730 + 5.0033*height_value_parse + 13.7516*weight_value_parse - 6.7550*age_value_parse;
+        rmr = (rmr*0.139)/weight_value_parse;
       }
       if ($("#sex").val()=='female'){
         var rmr = 655.0955 + 1.8496*height_value_parse + 9.5634*weight_value_parse - 4.6756*age_value_parse;
+        rmr = (rmr*0.139)/weight_value_parse;
       }
       $("#rmr_value").val(rmr);
       if ($("#met_value").val().length>0){
         var met_value_parse = parseFloat(($("#met_value").val()));
-        var corr_val = met_value_parse + 3.5/rmr;
+        var corr_val = met_value_parse * 3.5/rmr;
         $("#corr_met_value").val(corr_val);
       }
     }
