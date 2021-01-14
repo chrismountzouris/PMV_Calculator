@@ -1,24 +1,24 @@
 $( document ).ready(function() {
 
   $( "#at_value" ).keyup(function() {
-    if ($("#at_value").val()>40){
+    if ($("#at_value").val()>40 || $("#at_value").val()<10){
       $( "div .air_temperature_validate" ).addClass( "was-validated" );
-      if ($("#gt_value").val().length>0 && $("#at_value").val().length>0 && $("#av_value").val().length>0){
-        var mrt_temp = parseFloat($("#gt_value").val()) + 2.42*parseFloat($("#av_value").val())*parseFloat(($("#at_value").val())-parseFloat($("#gt_value").val()));
-        mrt_temp = Math.round(mrt_temp * 100) / 100
-        $("#mrt_value").val(mrt_temp+' °C');
-      }
-      if ($("#rh_value").val().length>0 && $("#at_value").val().length>0){
-        var at_temp = parseFloat(($("#at_value").val()));
-        var wvp = (parseFloat($("#rh_value").val())/100)*0.1333*Math.exp(18.6686-4030.183/(at_temp+235));
-        wvp = Math.round(wvp * 100) / 100
-        $("#pa_value").val(wvp+ ' Pa');
-      }
+    }
+    if ($("#gt_value").val().length>0 && $("#at_value").val().length>0 && $("#av_value").val().length>0){
+      var mrt_temp = parseFloat($("#gt_value").val()) + 2.42*parseFloat($("#av_value").val())*parseFloat(($("#at_value").val())-parseFloat($("#gt_value").val()));
+      mrt_temp = Math.round(mrt_temp * 100) / 100
+      $("#mrt_value").val(mrt_temp+' °C');
+    }
+    if ($("#rh_value").val().length>0 && $("#at_value").val().length>0){
+      var at_temp = parseFloat(($("#at_value").val()));
+      var wvp = (parseFloat($("#rh_value").val())/100)*0.1333*Math.exp(18.6686-4030.183/(at_temp+235));
+      wvp = Math.round(wvp * 100) / 100
+      $("#pa_value").val(wvp+ ' Pa');
     }
   });
 
   $( "#gt_value" ).keyup(function() {
-    if ($("#gt_value").val()>40){
+    if ($("#gt_value").val()>40 || $("#gt_value").val()<10){
       $( "div .globe_temperature_validate" ).addClass( "was-validated" );
     }
     if ($("#gt_value").val().length>0 && $("#at_value").val().length>0 && $("#av_value").val().length>0){
@@ -38,7 +38,7 @@ $( document ).ready(function() {
     if ($("#rh_value").val()>100 || $("#rh_value").val()<0){
       $( "div .relative_humidity_validate" ).addClass( "was-validated" );
     }
-    if ($("#rh_value").val().length>0 && $("#at_value").val().length>0){
+    if ($("#rh_value").val().length>0 && $("#at_value").val().length>0 && $("#rh_value").val()>=0 && $("#rh_value").val()<=100){
       var at_temp = parseFloat(($("#at_value").val()));
       var wvp = (parseFloat($("#rh_value").val())/100)*0.1333*Math.exp(18.6686-4030.183/(at_temp+235));
       wvp = Math.round(wvp * 100) / 100
@@ -55,7 +55,7 @@ $( document ).ready(function() {
       mrt_temp = Math.round(mrt_temp * 100) / 100
       $("#mrt_value").val(mrt_temp+' °C');
     }
-    if ($("#rh_value").val().length>0 && $("#at_value").val().length>0){
+    if ($("#rh_value").val().length>0 && $("#at_value").val().length>0 && $("#rh_value").val()>=0 && $("#rh_value").val()<=100){
       var at_temp = parseFloat(($("#at_value").val()));
       var wvp = (parseFloat($("#rh_value").val())/100)*0.1333*Math.exp(18.6686-4030.183/(at_temp+235));
       wvp = Math.round(wvp * 100) / 100
